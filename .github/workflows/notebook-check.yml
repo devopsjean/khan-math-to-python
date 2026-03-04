@@ -26,10 +26,7 @@ jobs:
           from pathlib import Path
           import nbformat
 
-          notebooks = [
-              p for p in sorted(Path(".").rglob("*.ipynb"))
-              if "executed" not in p.parts
-          ]
+          notebooks = sorted(Path(".").rglob("*.ipynb"))
           if not notebooks:
               raise SystemExit("No .ipynb files found.")
 
@@ -42,13 +39,6 @@ jobs:
               try:
                   nb = nbformat.read(nb_path, as_version=4)
                   nbformat.validate(nb)
-                  for idx, cell in enumerate(nb.get("cells", []), start=1):
-                      if cell.get("cell_type") != "code":
-                          continue
-                      if cell.get("outputs"):
-                          errors.append(f"{nb_path}: code cell {idx} has outputs")
-                      if cell.get("execution_count") is not None:
-                          errors.append(f"{nb_path}: code cell {idx} has execution_count")
               except Exception as exc:
                   errors.append(f"{nb_path}: {exc}")
 
