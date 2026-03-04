@@ -26,7 +26,10 @@ jobs:
           from pathlib import Path
           import nbformat
 
-          notebooks = sorted(Path(".").rglob("*.ipynb"))
+          notebooks = [
+              p for p in sorted(Path(".").rglob("*.ipynb"))
+              if "executed" not in p.parts
+          ]
           if not notebooks:
               raise SystemExit("No .ipynb files found.")
 

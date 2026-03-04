@@ -11,7 +11,7 @@ def staged_notebooks() -> list[Path]:
     cmd = ["git", "diff", "--cached", "--name-only", "--diff-filter=ACMR"]
     out = subprocess.check_output(cmd, text=True)
     paths = [Path(p.strip()) for p in out.splitlines() if p.strip().endswith(".ipynb")]
-    return [p for p in paths if p.exists()]
+    return [p for p in paths if p.exists() and (not p.parts or p.parts[0] != "executed")]
 
 
 def clear_outputs(path: Path) -> bool:
