@@ -2,6 +2,20 @@
 
 Khan Academy 문제를 Python 노트북(`.ipynb`)으로 옮긴 학습 저장소입니다.
 
+## GitHub Preview Notes
+
+- GitHub의 `.ipynb` Preview 화면은 정적 렌더링입니다. Preview 내부에서 `Run` 실행은 불가능합니다.
+- Preview 배경색은 저장소에서 제어할 수 없고, 방문자의 GitHub 테마 설정(다크/라이트)을 따릅니다.
+
+## Run Online (Executable)
+
+- Binder (JupyterLab):  
+  [![Launch Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/devopsjean/khan-math-to-python/main)
+- Lesson 1 directly in Binder:  
+  [Open Lesson1](https://mybinder.org/v2/gh/devopsjean/khan-math-to-python/main?labpath=Pre-algebra%2Funit_8%2FLesson1_percent_word_problems.ipynb)
+- Lesson 2 directly in Binder:  
+  [Open Lesson2](https://mybinder.org/v2/gh/devopsjean/khan-math-to-python/main?labpath=Pre-algebra%2Funit_8%2FLesson2_rational_number_word_problems.ipynb)
+
 ## Run Locally
 
 ```bash
